@@ -1,25 +1,32 @@
 package com.batch.customer;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-public class CUSTOMER
+@Entity
+public class Customer
 {
 	private Integer id;
 	private String name;
 	private String orderid;
 	private String phone;
 	private String email;
-	public CUSTOMER(Integer id, String name, String orderid, String phone, String email) {
-		super();
+	
+	public Customer(Integer id, String name, String orderid, String phone, String email) {
+	
 		this.id = id;
 		this.name = name;
 		this.orderid = orderid;
 		this.phone = phone;
 		this.email = email;
 	}
-	public CUSTOMER() {
+	public Customer() {
 		super();
 	}
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer getId() {
 		return id;
 	}
